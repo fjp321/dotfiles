@@ -4,8 +4,8 @@
 # #                                  ENV VARS                                  # 
 # ##############################################################################
 
-export WALLPAPER="$HOME/.config/bspwm/assets/wallpaper.jpeg"
-export LOCKSCREEN_WALLPAPER="$HOME/.config/bspwm/assets/lockscreen.jpeg"
+export WALLPAPER="$HOME/.local/share/backgrounds/wallpaper.png"
+export LOCKSCREEN_WALLPAPER="$HOME/.local/share/backgrounds/wallpaper.png"
 
 # ##############################################################################
 # #                                  FUNCTIONS                                 # 
@@ -33,13 +33,14 @@ xsetroot -xcf /usr/share/icons/volantes-cursors/cursors/left_ptr 32
 pgrep -x sxhkd > /dev/null || sxhkd &
 dunst --config $HOME/.config/dunst/dunstrc &
 picom --config $HOME/.config/picom/picom.conf &
+$HOME/.config/polybar/launch.sh
 
 # Start polkit agent.
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Setup wallpaper.
-# hsetroot -fill "$WALLPAPER"
-hsetroot -solid "#1C2325"
+hsetroot -fill "$WALLPAPER"
+# hsetroot -solid "#1C2325"
 
 # I hate mouse drift.
 xset m 0 0
@@ -60,18 +61,19 @@ bspc monitor -d 1 2 3 4 5
 # #                            GENERAL CONFIGURATION                           #
 # ##############################################################################
 
-config pointer_modifier             Mod4
+config pointer_modifier             	Mod4
 
-config window_gap                   16
+config window_gap                   	16
+bspc config border_width                2
 
-config top_padding                  48
-config left_padding                 0
-config right_padding                0
-config bottom_padding               0
+config top_padding                  	48
+config left_padding                 	0
+config right_padding                	0
+config bottom_padding               	0
 
-config split_ratio                  0.62
-config borderless_monocle           true
-config gapless_monocle              true
+config split_ratio                  	0.62
+config borderless_monocle           	true
+config gapless_monocle              	true
 
 # ##############################################################################
 # #                                 MISCELLANEOUS                              #
