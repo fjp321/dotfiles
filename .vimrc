@@ -13,8 +13,22 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin()
 
-Plug 'davidhalter/jedi-vim'
-Plug 'tpope/vim-fugitive'
+Plug 'sheerun/vim-polyglot'
+Plug 'sainnhe/everforest'
 Plug 'yggdroot/indentline'
 
 call plug#end()
+
+" everforest configuration
+
+if has('termguicolors')
+  set termguicolors
+endif
+
+set background=dark
+
+let g:everforest_background='hard'
+
+let g:everforest_better_performance='hard'
+
+colorscheme everforest
