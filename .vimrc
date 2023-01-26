@@ -13,22 +13,15 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin()
 
+Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'sainnhe/everforest'
 Plug 'yggdroot/indentline'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
-" everforest configuration
+set termguicolors
 
-if has('termguicolors')
-  set termguicolors
-endif
-
-set background=dark
-
-let g:everforest_background='hard'
-
-let g:everforest_better_performance='hard'
-
-colorscheme everforest
