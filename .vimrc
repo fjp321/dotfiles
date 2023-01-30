@@ -23,5 +23,3 @@ Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
-set termguicolors
-
